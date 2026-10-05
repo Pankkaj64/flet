@@ -26,9 +26,6 @@ def main(page: ft.Page) -> None:
         page.update()
     
     def submit(e: ControlEvent) -> None:
-        print('Username:', text_username.value)
-        print('Password:', text_password.value)
-
         page.clean()
         page.add(
             Row(
