@@ -1,12 +1,11 @@
 import flet as ft
-from flet import TextField
-from flet_core.control_event import ControlEvent
+from flet import TextField, ControlEvent
 
 
 def main(page: ft.Page):
     page.title = 'Increment Counter'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.theme_mode = 'dark'
+    page.theme_mode = ft.ThemeMode.DARK
 
     text_number: TextField = TextField(value='0', text_align=ft.TextAlign.RIGHT, width=70)
     
@@ -30,4 +29,4 @@ def main(page: ft.Page):
     )
 
 if __name__ == '__main__':
-    ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+    ft.run(main, view=ft.AppView.WEB_BROWSER)

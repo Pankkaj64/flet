@@ -1,6 +1,5 @@
 import flet as ft
-from flet import TextField, Checkbox, ElevatedButton, Text, Row, Column
-from flet_core.control_event import ControlEvent
+from flet import TextField, Checkbox, Button, Text, Row, Column, ControlEvent
 
 
 def main(page: ft.Page) -> None:
@@ -16,7 +15,7 @@ def main(page: ft.Page) -> None:
     text_username: TextField = TextField(label='Username', text_align=ft.TextAlign.LEFT, width=200)
     text_password: TextField = TextField(label='Password', text_align=ft.TextAlign.LEFT, width=200, password=True)
     checkbox_signup: Checkbox = Checkbox(label='I agree to stuff', value=False)
-    button_submit: ElevatedButton = ElevatedButton(text='Sign up', width=200, disabled=True)
+    button_submit: Button = Button(content='Sign up', width=200, disabled=True)
 
     def validate(e: ControlEvent) -> None:
         if all([text_username.value, text_password.value, checkbox_signup.value]):
@@ -60,7 +59,7 @@ def main(page: ft.Page) -> None:
     )
 
 if __name__ == '__main__':
-    ft.app(target=main, view=ft.AppView.WEB_BROWSER)
+    ft.run(main, view=ft.AppView.WEB_BROWSER)
 
 
 
